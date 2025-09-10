@@ -20,6 +20,11 @@ namespace WindowsFormsApp1
 
         }
 
+        private void SetFullName_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void lblBirthday_Click(object sender, EventArgs e)
         {
 
