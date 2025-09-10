@@ -67,7 +67,8 @@ namespace WindowsFormsApp1
             StudentInfoClass.FirstName = txtFirstName.Text;
             StudentInfoClass.LastName = txtLastName.Text;
             StudentInfoClass.MiddleName = txtMiddleName.Text;
-            StudentInfoClass.Address = txtAddress.Text;
+            StudentInfoClass.Birthday = Birthday.Text;
+            StudentInfoClass.Gender = Gender.Text;
 
             StudentInfoClass.Age = long.TryParse(txtAge.Text, out long age) ? age : 0;
             StudentInfoClass.ContactNo = long.TryParse(txtContactNo.Text, out long contact) ? contact : 0;
@@ -79,6 +80,21 @@ namespace WindowsFormsApp1
             {
                 MessageBox.Show("Registration confirmed!", "Success");
             }
+        }
+
+        private void txtContactNo_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Birthday_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblGender_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

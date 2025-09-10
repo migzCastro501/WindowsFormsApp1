@@ -13,7 +13,18 @@ namespace WindowsFormsApp1
     public partial class FrmConfirm : Form
     {
         // Delegates
-        private StudentInfoClass.DelegateText delProgram, delLastName, delFirstName, delMiddleName, delAddress;
+        private StudentInfoClass.DelegateText delProgram, delLastName, delFirstName, delMiddleName, delGender, delBirthday;
+
+        private void lblBirthday_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private StudentInfoClass.DelegateNumber delStudentNo, delContactNo, delAge;
 
         public FrmConfirm()
@@ -24,10 +35,11 @@ namespace WindowsFormsApp1
             delLastName = new StudentInfoClass.DelegateText(StudentInfoClass.GetLastName);
             delFirstName = new StudentInfoClass.DelegateText(StudentInfoClass.GetFirstName);
             delMiddleName = new StudentInfoClass.DelegateText(StudentInfoClass.GetMiddleName);
-            delAddress = new StudentInfoClass.DelegateText(StudentInfoClass.GetAddress);
+            delBirthday = new StudentInfoClass.DelegateText(StudentInfoClass.GetBirthday);
             delStudentNo = new StudentInfoClass.DelegateNumber(StudentInfoClass.GetStudentNo);
             delContactNo = new StudentInfoClass.DelegateNumber(StudentInfoClass.GetContactNo);
             delAge = new StudentInfoClass.DelegateNumber(StudentInfoClass.GetAge);
+            delGender = new StudentInfoClass.DelegateText(StudentInfoClass.GetGender);
 
             // Display data
             lblStudentNo.Text = delStudentNo(StudentInfoClass.StudentNo).ToString();
@@ -37,7 +49,8 @@ namespace WindowsFormsApp1
             lblMiddleName.Text = delMiddleName(StudentInfoClass.MiddleName);
             lblAge.Text = delAge(StudentInfoClass.Age).ToString();
             lblContactNo.Text = delContactNo(StudentInfoClass.ContactNo).ToString();
-            lblAddress.Text = delAddress(StudentInfoClass.Address);
+            lblBirthday.Text = delBirthday(StudentInfoClass.Birthday);
+            Gender.Text =  delGender(StudentInfoClass.Gender);
         }
 
         
