@@ -47,7 +47,7 @@ namespace WindowsFormsApp1
             // Optional: Select first item by default
             if (cboProgram.Items.Count > 0)
                 cboProgram.SelectedIndex = 0;
-            
+
             cbGender.Items.AddRange(new string[]
             {
                 "Male",
@@ -58,7 +58,7 @@ namespace WindowsFormsApp1
         }
 
 
-private void label5_Click(object sender, EventArgs e)
+        private void label5_Click(object sender, EventArgs e)
         {
 
         }
@@ -70,26 +70,59 @@ private void label5_Click(object sender, EventArgs e)
 
         private void button1_Click(object sender, EventArgs e)
         {
-            // Assign textbox/combobox values to static variables
-            StudentInfoClass.Program = cboProgram.Text;
-            StudentInfoClass.FirstName = txtFirstName.Text;
-            StudentInfoClass.LastName = txtLastName.Text;
-            StudentInfoClass.MiddleName = txtMiddleName.Text;
-            StudentInfoClass.Birthday = Birthday.Text;
-            StudentInfoClass.Gender = Gender.Text;
-
-            StudentInfoClass.Age = long.TryParse(txtAge.Text, out long age) ? age : 0;
-            StudentInfoClass.ContactNo = long.TryParse(txtContactNo.Text, out long contact) ? contact : 0;
-            StudentInfoClass.StudentNo = long.TryParse(txtStudentNo.Text, out long studNo) ? studNo : 0;
-
-            // Open FrmConfirm as dialog
-            FrmConfirm frm = new FrmConfirm();
-            if (frm.ShowDialog() == DialogResult.OK)
+            try
             {
-                MessageBox.Show("Registration confirmed!", "Success");
-            }
-        }
+                // Assign textbox/combobox values to static variables
+                StudentInfoClass.Program = cboProgram.Text;
+                StudentInfoClass.FirstName = txtFirstName.Text;
+                StudentInfoClass.LastName = txtLastName.Text;
+                StudentInfoClass.MiddleName = txtMiddleName.Text;
+                StudentInfoClass.Birthday = Birthday.Text;
+                StudentInfoClass.Gender = Gender.Text;
 
+                StudentInfoClass.Age = long.TryParse(txtAge.Text, out long age) ? age : 0;
+                StudentInfoClass.ContactNo = long.TryParse(txtContactNo.Text, out long contact) ? contact : 0;
+                StudentInfoClass.StudentNo = long.TryParse(txtStudentNo.Text, out long studNo) ? studNo : 0;
+            }
+
+
+
+
+            catch (FormatException) {
+
+                MessageBox.Show("Please enter valid numeric values for Student Number, Age, and Contact Number.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            catch (OverflowException)
+            {
+                MessageBox.Show("The number entered is too large. Please enter a smaller value.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An unexpected error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            finally
+            }
+            MessageBox.Show("Please input in the fields mention", "Info"; MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+        // Open FrmConfirm as dialog
+        FrmConfirm frm = new FrmConfirm();
+                if (frm.ShowDialog() == DialogResult.OK)
+                {
+                    MessageBox.Show("Registration confirmed!", "Success");
+                foreach (Control ctrl in this.Controls)
+                {
+                    if (ctrl is TextBox)
+                        ((Textbox)ctrl).Clear();
+                    else if (ctrl is ComboBox )
+                        ((ComboBox.SelectedIndex = -1; 
+                }
+    }   
+        }   
+
+            
         private void txtContactNo_TextChanged(object sender, EventArgs e)
         {
 

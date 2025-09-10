@@ -123,7 +123,7 @@
             this.Birthday.Size = new System.Drawing.Size(45, 13);
             this.Birthday.TabIndex = 7;
             this.Birthday.Text = "Birthday";
-            this.Birthday.Click += new System.EventHandler(this.Birthday_Click);
+//            this.Birthday.Click += new System.EventHandler(this.Birthday_Click);
             // 
             // txtStudentNo
             // 
