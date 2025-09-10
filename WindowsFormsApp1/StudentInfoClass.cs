@@ -12,24 +12,29 @@ namespace WindowsFormsApp1
         public delegate long DelegateNumber(long number);
         public delegate string DelegateText(string txt);
 
-        // Static variables
+        // Static variablesIn the frmRegistration, 
         public static string FirstName = "";
         public static string LastName = "";
         public static string MiddleName = "";
         public static string Birthday = "";
         public static string Program = "";
         public static string Gender = "";
+        public static string FullName = "";
         public static long Age = 0;
         public static long ContactNo = 0;
         public static long StudentNo = 0;
 
-        // Static return methods
+        // Static return methods frmRegistration
         public static string GetFirstName(string txt) => FirstName;
         public static string GetLastName(string txt) => LastName;
         public static string GetMiddleName(string txt) => MiddleName;
         public static string GetGender(string txt) => Gender;
         public static string GetProgram(string txt) => Program;
-        
+        public static string GetFullName(string last, string first, string middle)
+        {
+            FullName = $"{last}, {first} {middle}.";
+             return FullName;
+        }
         public static string GetBirthday(string txt) => Birthday;
         public static long GetAge(long number) => Age;
         public static long GetContactNo(long number) => ContactNo;

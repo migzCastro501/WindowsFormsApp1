@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
-    public partial class Form1 : Form
+    public partial class OrganizationProfile : Form
     {
-        public Form1()
+        public OrganizationProfile()
         {
             InitializeComponent();
             // Fill combobox with sample college courses
@@ -47,10 +47,18 @@ namespace WindowsFormsApp1
             // Optional: Select first item by default
             if (cboProgram.Items.Count > 0)
                 cboProgram.SelectedIndex = 0;
+            
+            cbGender.Items.AddRange(new string[]
+            {
+                "Male",
+                "Female"
+        });
+            if (cbGender.Items.Count > 0)
+                cbGender.SelectedIndex = 0;
         }
-        
 
-        private void label5_Click(object sender, EventArgs e)
+
+private void label5_Click(object sender, EventArgs e)
         {
 
         }

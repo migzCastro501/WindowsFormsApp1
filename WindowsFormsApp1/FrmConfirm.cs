@@ -15,6 +15,11 @@ namespace WindowsFormsApp1
         // Delegates
         private StudentInfoClass.DelegateText delProgram, delLastName, delFirstName, delMiddleName, delGender, delBirthday;
 
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void lblBirthday_Click(object sender, EventArgs e)
         {
 
@@ -45,7 +50,7 @@ namespace WindowsFormsApp1
             lblStudentNo.Text = delStudentNo(StudentInfoClass.StudentNo).ToString();
             lblProgram.Text = delProgram(StudentInfoClass.Program);
             lblLastName.Text = delLastName(StudentInfoClass.LastName);
-            lblFirstName.Text = delFirstName(StudentInfoClass.FirstName);
+            SetFullName.Text = delFirstName(StudentInfoClass.FirstName);
             lblMiddleName.Text = delMiddleName(StudentInfoClass.MiddleName);
             lblAge.Text = delAge(StudentInfoClass.Age).ToString();
             lblContactNo.Text = delContactNo(StudentInfoClass.ContactNo).ToString();
