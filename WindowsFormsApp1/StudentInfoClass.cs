@@ -6,40 +6,43 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsApp1
 {
-    internal class StudentInfoClass
+    public class StudentInfoClass
     {
-        // Delegates
         public delegate long DelegateNumber(long number);
         public delegate string DelegateText(string txt);
 
-        // Static variablesIn the frmRegistration, 
         public static string FirstName = "";
         public static string LastName = "";
         public static string MiddleName = "";
-        public static string Birthday = "";
         public static string Program = "";
-        public static string Gender = "";
-        public static string FullName = "";
         public static long Age = 0;
         public static long ContactNo = 0;
         public static long StudentNo = 0;
+        public static string Birthday = "";
+        public static string Gender = "";
 
-        // Static return methods frmRegistration
+        // Properties (for database mapping)
+        public long StudentNoProp { get => StudentNo; set => StudentNo = value; }
+        public string FirstNameProp { get => FirstName; set => FirstName = value; }
+        public string LastNameProp { get => LastName; set => LastName = value; }
+        public string MiddleNameProp { get => MiddleName; set => MiddleName = value; }
+        public string ProgramProp { get => Program; set => Program = value; }
+        public long AgeProp { get => Age; set => Age = value; }
+        public long ContactNoProp { get => ContactNo; set => ContactNo = value; }
+        public string BirthdayProp { get => Birthday; set => Birthday = value; }
+        public string GenderProp { get => Gender; set => Gender = value; }
+
+        // Delegates
         public static string GetFirstName(string txt) => FirstName;
         public static string GetLastName(string txt) => LastName;
         public static string GetMiddleName(string txt) => MiddleName;
-        public static string GetGender(string txt) => Gender;
         public static string GetProgram(string txt) => Program;
-        public static string GetFullName(string last, string first, string middle)
-        {
-            FullName = $"{last}, {first} {middle}.";
-             return FullName;
-        }
         public static string GetBirthday(string txt) => Birthday;
+        public static string GetGender(string txt) => Gender;
+
         public static long GetAge(long number) => Age;
         public static long GetContactNo(long number) => ContactNo;
         public static long GetStudentNo(long number) => StudentNo;
     }
 }
-    
 
